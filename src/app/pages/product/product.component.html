@@ -1,0 +1,26 @@
+<!-- Inicio de landing -->
+<div class="container text-center">
+    <div class="product-description" [innerHtml]="marketService.producto.descripcion | noSanitize"></div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="title">A T E N C I Ó N</div>
+            <div class="info-product">
+                Realice su pedido hoy <span class="font-weight-bold">{{ date | date:'dd/MM/yyyy' }}</span> y su paquete será preparado y enviado hoy.
+                Tenemos muchos pedidos y nuestro <span class="font-weight-bold">Stock es Limitado</span>
+            </div>
+        </div>
+    </div>
+
+    <app-slider-product-img [images]="marketService.producto.images"></app-slider-product-img>
+
+</div>
+<!-- Fin de landing -->
+<!-- Inicio de carrito y formulario -->
+<app-cart-form [producto-input]="marketService.producto"
+               [clickstoreProducto]="clickstoreProducto"
+               [wsnumber]="wsnumber"></app-cart-form>
+<!-- Fin de carrito y formulario -->
+<!-- Inicio del footer -->
+<app-footer [logo]="logo"></app-footer>
+<!-- Fin del footer -->
